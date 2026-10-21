@@ -1,0 +1,7 @@
+# Directorio de Git
+.git/
+
+# Directorios adicionales excluidos
+capturas/
+datos/
+scripts/
