@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto Final - Grupo 6</title>
+  <meta name="description" content="Servidor web containerizado del Grupo 6 para el proyecto final de Introducción al Software Libre">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Geist', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 40px 50px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      text-align: center;
+      max-width: 600px;
+      width: 90%;
+      border-top: 5px solid #1D63ED;
+    }
+
+    h1 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #34495e;
+      font-weight: 300;
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .status-badge {
+      display: inline-block;
+      background-color: #27ae60;
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+
+    .status-badge:hover {
+      background-color: #219653;
+    }
+
+    .footer {
+      margin-top: 35px;
+      font-size: 0.85rem;
+      color: #95a5a6;
+      border-top: 1px solid #eee;
+      padding-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Proyecto Final</h1>
+    <h2>Introducción al Software Libre</h2>
+    <p>¡Bienvenidos! Este es el servidor web containerizado del <strong>Grupo 6</strong>. </p>
+    <p>Esta página se está sirviendo desde un contenedor Docker utilizando Nginx.</p>
+    <div class="status-badge" id="contador-badge">Dame click: 0</div>
+    <div class="footer">Universidad de El Salvador - Ciclo II Segundo Año - 2026</div>
+  </div>
+
+  <script>
+    let contador = 0;
+    const badge = document.getElementById('contador-badge');
+
+    badge.addEventListener('click', () => {
+      contador++;
+      badge.textContent = badge.textContent.split(':')[0] + ': ' + contador;
+    });
+  </script>
+</body>
+</html>
